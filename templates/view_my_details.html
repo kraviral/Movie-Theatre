@@ -1,0 +1,11 @@
+{% extends 'layout.html' %}
+
+{% block heading %}
+	My Profile
+{% endblock %}
+
+{% block body %}
+	<b>Username</b> : {{ user.username }}
+	<br>
+	<b>Email</b> : {{ user.email }}
+{% endblock %}

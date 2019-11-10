@@ -1,0 +1,13 @@
+{% extends 'layout.html' %}
+
+{% block heading %}
+	Admin Section
+{% endblock %}
+
+{% block body %}
+	<a href="{{ url_for('movie_requests') }}">Movie Requests</a>
+	<br>
+	<a href="{{ url_for('movie_status') }}">View Movie Approval Status</a>
+	<br>
+	<a href="{{ url_for('dropsession') }}">Logout</a>
+{% endblock %}

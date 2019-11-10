@@ -1,0 +1,20 @@
+{% extends 'layout.html' %}
+
+{% block heading %}
+	
+{% endblock %}
+
+{% block body %}
+	<h2>Create Theatre Profile</h2>
+	<form action="{{ url_for('create_profile') }}" method="post">
+		Theatre Name
+		<br>
+		<input type="text" name="theatre_name" placeholder="Enter Theatre Name">
+		<br>
+		Address of the Theatre
+		<br>
+		<input type="text" name="address" placeholder="Enter address of the theatre">
+		<br>
+		<button>Create Theatre Profile</button>
+	</form>
+{% endblock %}

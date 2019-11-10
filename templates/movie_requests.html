@@ -1,0 +1,31 @@
+{% extends 'layout.html' %}
+
+{% block heading %}
+	Admin Section
+{% endblock %}
+
+{% block body %}
+	<h2>Pending Movie Requests</h2>
+	<table style = "width: 35%">
+		<tr>
+			<th>Movie Name</th>
+			<th>Language</th>
+			<th>Time</th>
+			<th>Request</th>
+		</tr>
+		{% for movie in movies %}
+			<tr>
+				<td>{{ movie.name }}</td>
+				<td>{{ movie.language }}</td>
+				<td>{{ movie.time }}</td>
+				<td> 
+					<form action="{{ url_for('movie_requests') }}" method="POST">
+						<button name="YES" type="submit" value={{ movie.id }}>Approve</button>
+						<button name="NO" type="submit" value={{ movie.id }}>Decline</button>
+					</form>			
+				</td>
+			</tr>
+		{% endfor %}
+	</table>
+	<a href="{{ url_for('admin') }}">Go Back</a>
+{% endblock %}

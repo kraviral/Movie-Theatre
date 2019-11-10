@@ -1,0 +1,14 @@
+{% extends 'layout.html' %}
+
+{% block heading %}
+	{{ message }}
+{% endblock %}
+
+{% block body %}
+	<script type="text/javascript">
+		function logout_alert(){	
+			alert('You are now logged out') ;
+		}
+	</script>
+	<a href="{{ url_for('dropsession') }}" onclick="logout_alert()">Click Here to logout</a>
+{% endblock %}

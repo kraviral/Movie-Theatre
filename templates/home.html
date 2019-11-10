@@ -1,0 +1,13 @@
+{% extends "layout.html" %}
+
+{% block heading %}
+	MOVIE THEATER
+{% endblock %}
+
+{% block body %}
+	<a href="{{ url_for('movies') }}">Movies</a>
+	<br>
+	<a href="{{ url_for('login') }}">Click here to login</a>
+	<br>
+	<a href="{{ url_for('signup') }}">Sign Up here</a>
+{% endblock %}

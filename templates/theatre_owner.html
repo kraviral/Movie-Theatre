@@ -1,0 +1,18 @@
+{% extends 'layout.html' %}
+
+{% block head %}
+{% endblock %}
+
+{% block heading %}
+	Theatre Owner
+{% endblock %}
+
+{% block body %}
+	<a href="{{ url_for('create_profile') }}">Create Theatre Profile</a>
+	&nbsp
+	<a href="{{ url_for('theatre_profile') }}">View Theatre Profile</a>
+	&nbsp
+	<a href="{{ url_for('make_movie_request') }}">Make a new movie request</a>
+	&nbsp
+	<a href="{{ url_for('dropsession') }}">Logout</a>
+{% endblock %}

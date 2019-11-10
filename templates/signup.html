@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+
+{% block heading %}
+	MOVIE THEATER
+{% endblock %}
+
+{% block body %}
+	<h2>Sign Up</h2>
+	<form action="{{ url_for('signup') }}" method="post">
+		Account Type
+		<br>
+		<select name="account_type">
+    		<option value="customer">Customer</option>
+    		<option value="admin">Admin</option>
+    		<option value="theatre_owner">Theatre Owner</option>
+  		</select>
+		<br>
+		Username
+		<br>
+		<input type="text" name="username" placeholder="Enter Username">
+		<br>
+		Password<br>
+		<input type="password" name="password" placeholder="Enter password">
+		<br>
+		Email Address
+		<br>
+		<input type="text" name="email" placeholder="Enter Email-ID">
+		<br>
+		<button>Sign Up</button>
+	</form>
+{% endblock %}

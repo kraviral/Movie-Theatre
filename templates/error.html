@@ -1,0 +1,9 @@
+{% extends "layout.html" %}
+
+{% block heading %}
+	<h1>{{ message }}</h1>
+{% endblock %}
+
+{% block body %}
+	<a href="{{ url_for(function) }}">{{ x }}</a>
+{% endblock %}

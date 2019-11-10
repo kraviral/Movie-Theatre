@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+
+{% block head %}
+	
+{% endblock %}
+
+{% block heading %}
+	MOVIE THEATER
+{% endblock %}
+
+{% block body %}
+	<h2>Make Movie Request</h2>
+	<form action="{{ url_for('make_movie_request') }}" method="post">
+		Movie Name
+		<br>
+		<input type="text" name="movie_name" placeholder="Enter movie name">
+		<br>
+		Movie Language
+		<br>
+		<input type="text" name="language" placeholder="Enter language">
+		<br>
+		Time (in 24 hr format)
+		<br>
+		<input type="number" name="time" placeholder="Enter time of movie">
+		<br>
+		<button>Make Movie Request</button>
+	</form>
+{% endblock %}

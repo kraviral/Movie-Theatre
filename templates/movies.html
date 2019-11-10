@@ -1,0 +1,28 @@
+{% extends 'layout.html' %}
+
+{% block heading %}
+	MOVIE THEATRE
+{% endblock %}
+
+{% block body %}
+	<h2>Movies</h2>
+	<form action="{{ url_for('movies') }}" method="post">
+  		<input type="text" name="search" placeholder="Search by language...">
+  		<button>Search</button>
+	</form>
+	<table style = "width: 35%">
+		<tr>
+			<th>Movie Name</th>
+			<th>Language</th>
+			<th>Time</th>
+		</tr>
+		{% for movie in movies %}
+			<tr>
+				<td>{{ movie.name }}</td>
+				<td>{{ movie.language }}</td>
+				<td>{{ movie.time }}</td>
+			</tr>
+		{% endfor %}
+	</table>
+	<a href="{{ url_for('home') }}">Go Back</a>
+{% endblock %}
