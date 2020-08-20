@@ -1,7 +1,28 @@
 {% extends "layout.html" %}
 
 {% block head %}
-	
+	<style>
+		a:link, a:visited {
+			background-color: white;
+			color: black;
+			border: 2px solid black;
+			padding: 10px 20px;
+			text-align: center;
+			text-decoration: none;
+			display: inline-block;
+		}
+
+		a:hover, a:active {
+			background-color: black;
+			color: white;
+		}
+		input, select {
+		  width: 20%;
+		  padding: 12px 20px;
+		  margin: 8px 0;
+		  box-sizing: border-box;
+		}
+	</style>
 {% endblock %}
 
 {% block heading %}
@@ -23,6 +44,6 @@
 		<br>
 		<input type="number" name="time" placeholder="Enter time of movie">
 		<br>
-		<button>Make Movie Request</button>
+		<input type="submit" value="Make Movie Request">
 	</form>
 {% endblock %}
