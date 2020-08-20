@@ -1,0 +1,61 @@
+{% extends 'layout.html' %}
+
+{% block head %}
+  <script>
+    // document.addEventListener('DOMContentLoaded', ()=>{
+    //   var movie = JSON.parse('{{ movie | tojson | safe}}') ;
+    //   var poster = document.getElementById("poster") ;
+    //
+    // }) ;
+  </script>
+  <style>
+    div.plot {
+      width: 40% ;
+    }
+    img {
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      margin-bottom: 25px;
+    }
+    a:link, a:visited {
+      background-color: white;
+      color: black;
+      border: 2px solid black;
+      padding: 0px 10px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    a:hover, a:active {
+      background-color: black;
+      color: white;
+    }
+  </style>
+{% endblock %}
+
+{% block heading %}
+	MOVIE THEATRE
+{% endblock %}
+
+{% block body %}
+  <div id="movie_details">
+    <h2 id="title">{{ movie["Title"] }} ({{ movie["Year"] }})</h2>
+      <img id="poster" src="{{ movie["Poster"] }} width="10%" height="10%">
+
+    <br>
+    <b>Genre : </b>{{ movie["Genre"] }}
+    <br>
+    <b>Runtime : </b>{{ movie["Runtime"] }}
+    <br>
+    <b>Language : </b>{{ movie["Language"] }}
+    <br>
+    <b>Cast : </b>{{ movie["Actors"] }}
+    <br>
+    <b>Director : </b>{{ movie["Director"] }}
+    <br>
+    <b>Plot</b>
+    <div class="plot">{{ movie["Plot"] }}</div>
+  </div>
+  <br>
+	<a href="{{ url_for('movies') }}">Go Back</a>
+{% endblock %}
