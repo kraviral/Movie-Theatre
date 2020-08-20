@@ -1,5 +1,30 @@
 {% extends "layout.html" %}
 
+{% block head %}
+	<style>
+		a:link, a:visited {
+			background-color: white;
+			color: black;
+			border: 2px solid black;
+			padding: 10px 20px;
+			text-align: center;
+			text-decoration: none;
+			display: inline-block;
+		}
+
+		a:hover, a:active {
+			background-color: black;
+			color: white;
+		}
+		input, select {
+		  width: 20%;
+		  padding: 12px 20px;
+		  margin: 8px 0;
+		  box-sizing: border-box;
+		}
+	</style>
+{% endblock %}
+
 {% block heading %}
 	MOVIE THEATER
 {% endblock %}
@@ -22,7 +47,7 @@
 		Password<br>
 		<input type="password" name="password" placeholder="Enter password">
 		<br>
-		<button>Login</button>
+		<input type="submit" value="Submit">
 	</form>
 	Don't have an account? <a href="{{ url_for('signup') }}">Sign Up</a>
 {% endblock %}
