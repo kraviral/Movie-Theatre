@@ -1,5 +1,24 @@
 {% extends 'layout.html' %}
 
+{% block head %}
+<style>
+a:link, a:visited {
+	background-color: white;
+	color: black;
+	border: 2px solid black;
+	padding: 10px 20px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+}
+
+a:hover, a:active {
+	background-color: black;
+	color: white;
+}
+</style>
+{% endblock %}
+
 {% block heading %}
 	Admin Section
 {% endblock %}
@@ -18,11 +37,11 @@
 				<td>{{ movie.name }}</td>
 				<td>{{ movie.language }}</td>
 				<td>{{ movie.time }}</td>
-				<td> 
+				<td>
 					<form action="{{ url_for('movie_requests') }}" method="POST">
 						<button name="YES" type="submit" value={{ movie.id }}>Approve</button>
 						<button name="NO" type="submit" value={{ movie.id }}>Decline</button>
-					</form>			
+					</form>
 				</td>
 			</tr>
 		{% endfor %}
